@@ -1,0 +1,17 @@
+<h1 class="mt-5 mb-4">Reset Password</h1>
+
+<form action="/Reset" method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Old Password</label>
+        <input type="text" class="form-control" id="oldpass" name="oldpass" required>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">New Password</label>
+        <input type="text" class="form-control" id="newpass" name="newpass" required>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Confirm Password</label>
+        <input type="text" class="form-control" id="confirmPass" name="confirmPass" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Reset</button>
+</form>

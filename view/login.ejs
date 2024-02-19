@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+ 
+.book-background {
+  background-image: url("https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?w=1060&t=st=1708177785~exp=1708178385~hmac=a9d40bf5f06945859968074255498b1154ac8c4338f7dab3a026416a2077a381");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin-left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+ 
+h1 {
+  margin-bottom: 20px;
+}
+ 
+form {
+  display: flex;
+  flex-direction: column;
+}
+ 
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+ 
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+ 
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+ 
+ 
+ 
+p {
+  margin-top: 20px;
+}
+ 
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+ 
+a:hover {
+  text-decoration: underline;
+}
+.back{
+  color: #4CAF50;
+  height:fit-content;
+  width:fit-content;
+ 
+}
+.bt1{
+  background-color:rgba(255, 255, 255, 0.9);
+  color:#4CAF50;
+  padding: 0%;
+  font-size:16px;
+  background: transparent;
+}
+ 
+  </style>
+  <title>User Login</title>
+</head>
+<body>
+  
+  <div class="book-background">
+   
+    <div class="login-container">
+  
+      
+      
+   
+      <form action="/Login" method="POST">
+         
+            
+         
+        
+           
+        
+   
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+         
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+            
+           
+            <button type="submit">Submit</button>
+          </form>
+          <%if(errorMessage){%>
+            <h1><%=errorMessage%></h1>
+          <%}%>
+        <a href="/auth/google"><p>Login With Google</p></a>
+      <p>Don't have an account? <a href="/register">Sign up</a></p>
+      <form method="POST" action="ForgetManage">
+       
+    
+        <p>Forget Password?  <button class="bt1" type="submit">Forget Password</button></p>
+      
+     
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
