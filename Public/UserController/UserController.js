@@ -115,8 +115,9 @@ export default class UserController {
       res.render('auth');
   }
   successGoogleLogin = (req , res) => { 
+    console.log(req.user);
 	if(!req.user) 
-		res.redirect('https://auth-system-psqf.onrender.com/failure'); 
+		res.redirect('/https://auth-system-psqf.onrender.com/failure'); 
   console.log(req.user.name)
 
 	//res.send("Welcome " + req.user.email);
