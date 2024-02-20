@@ -37,7 +37,7 @@ server.get("/failure",userController.failureGoogleLogin)
 server.get('/auth/google' , passport.authenticate('google', { scope: 
 	[ 'email', 'profile' ] 
 }));
-server.get( 'https://auth-system-psqf.onrender.com/auth/google/callback', 
+server.get( '/auth/google/callback', 
 	passport.authenticate( 'google', { 
 		successRedirect: '/success', 
 		failureRedirect: '/failure'
