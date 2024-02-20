@@ -39,8 +39,8 @@ server.get('/auth/google' , passport.authenticate('google', { scope:
 }));
 server.get( '/auth/google/callback', 
 	passport.authenticate( 'google', { 
-		successRedirect: '/success', 
-		failureRedirect: '/failure'
+		successRedirect: 'https://auth-system-psqf.onrender.com/success', 
+		failureRedirect: 'https://auth-system-psqf.onrender.com/failure'
 }));
 
 server.listen(3000,()=>{
