@@ -5,6 +5,7 @@ import { UserModel } from "../Mongo/UserSchema.js";
 
 
 let olpass="";
+
 export default class UserController {
     getHome(req,res)
     {
@@ -26,17 +27,18 @@ export default class UserController {
   {
      const {newpass,confirmPass,oldpass}=req.body
      console.log(olpass)
+     const email=req.session.email
      if(newpass!==confirmPass)
      {
-      res.render('UpdatePass',{email:email,error:"New Password and confirm Passwords are not matching"});
+      res.render('UpdatePass',{email,error:"New Password and confirm Passwords are not matching"});
      }
      if(olpass!==oldpass)
      {
-      res.render('UpdatePass',{email:email,error:"Old Passsword is wrong"});
+      res.render('UpdatePass',{email,error:"Old Passsword is wrong"});
      }
-     const email=req.session.email
+    
     await UserModel.findOneAndUpdate({Email:email},{Password:newpass})
-     res.send("Password Updated")
+    res.render('UpdatePass',{email,error:"Password has been reset"});
      
   }
   async postRegister(req, res) {
@@ -114,7 +116,7 @@ export default class UserController {
   }
   successGoogleLogin = (req , res) => { 
 	if(!req.user) 
-		res.redirect('/failure'); 
+		res.redirect('https://auth-system-psqf.onrender.com/failure'); 
   console.log(req.user.name)
 
 	//res.send("Welcome " + req.user.email);
